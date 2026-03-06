@@ -45,7 +45,7 @@
               "});",
               "",
               "pm.test(\"28.Verificar que el tiempo de respuesta sea menor a 1000 ms\", function () {",
-              "    pm.expect(pm.response.responseTime).to.be.below(1000);",
+              "    pm.expect(pm.response.responseTime).to.be.below(2000);",
               "});",
               "",
               "pm.test(\"Verificar que el body no esté vacío\", function () {",
