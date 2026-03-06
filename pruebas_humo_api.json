@@ -1,0 +1,68 @@
+{
+  "info": {
+    "name": "Pruebas de Humo -API Inicio",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Pruebas de Humo -API Inicio",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://buggy.justtestit.org/make/ckl2phsabijs71623vk0",
+          "protocol": "https",
+          "host": [
+            "buggy",
+            "justtestit",
+            "org"
+          ],
+          "path": [
+            "make",
+            "ckl2phsabijs71623vk0"
+          ]
+        }
+      },
+      "response": [],
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "",
+              ""
+            ]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Verificar que la respuesta sea 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "",
+              "pm.test(\"28.Verificar que el tiempo de respuesta sea menor a 1000 ms\", function () {",
+              "    pm.expect(pm.response.responseTime).to.be.below(1000);",
+              "});",
+              "",
+              "pm.test(\"Verificar que el body no esté vacío\", function () {",
+              "    pm.expect(pm.response.text()).to.not.be.empty;",
+              "});",
+              "",
+              "pm.test(\"Verificar Content-Type\", function () {",
+              "    pm.response.to.have.header(\"Content-Type\");",
+              "});",
+              "",
+              "pm.test(\"Verificar tamaño de respuesta\", function () {",
+              "    pm.expect(pm.response.responseSize).to.be.above(0);",
+              "});"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
